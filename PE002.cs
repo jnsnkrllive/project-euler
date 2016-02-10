@@ -1,5 +1,4 @@
-﻿namespace ProjectEuler
-{
+﻿namespace ProjectEuler {
 
     class PE002 {
 
@@ -11,12 +10,11 @@
             System.Console.WriteLine();
 
             int highNumber = 4000000;
-            int nMinusTwo = 1;
-            int nMinusOne = 2;
-            int n = 0;
+            int nMinusTwo = 0;
+            int nMinusOne = 1;
             int sumEvenTerms = 0;
-            while(n < highNumber) {
-                n = nMinusOne + nMinusTwo;
+            while(nMinusOne < highNumber) {
+                int n = nMinusOne + nMinusTwo;
                 nMinusTwo = nMinusOne;
                 nMinusOne = n;
                 if (n%2 == 0) {
@@ -25,7 +23,6 @@
             }
 
             System.Console.WriteLine("The sum of all even-valued terms of the Fibanacci sequence up to {0} is {1}", highNumber, sumEvenTerms);
-
         }
 
     }
