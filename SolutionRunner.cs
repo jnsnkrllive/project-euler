@@ -3,7 +3,7 @@
     class SolutionRunner {
 
         static void Main(string[] args) {
-            PE002.execute();
+            PE003.execute();
         }
 
     }
