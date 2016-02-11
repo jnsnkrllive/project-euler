@@ -9,9 +9,36 @@
             System.Console.WriteLine();
 
             int smallestMultiple = -1;
-            // TODO
+            int rangeMin = 1;
+            int rangeMax = 20;
+            int testNumber = rangeMax;
+            while (smallestMultiple < 0) {
+                if (checkMultiple(testNumber, rangeMin, rangeMax)) {
+                    smallestMultiple = testNumber;
+                }
+                testNumber++;
+            }
 
-            System.Console.WriteLine("The smallest positive number evenly divisible by all numbers from 1 to 20 is {0}", smallestMultiple);
+            System.Console.WriteLine("The smallest positive number evenly divisible by all numbers from {0} to {1} is {2}", rangeMin, rangeMax, smallestMultiple);
+        }
+
+        /**
+         * Returns TRUE if n is evenly divisible by all numbers from min to max
+         */
+        private static bool checkMultiple(int n, int min, int max) {
+            for (int i = min; i <= max; i++) {
+                if (!isEvenlyDivisible(n, i)) {
+                    return false;
+                }
+            }
+            return true;
+        }
+
+        /**
+         * Returns TRUE if n is evenly divisible by d
+         */
+        private static bool isEvenlyDivisible(int n, int d) {
+            return (n % d == 0);
         }
 
     }
