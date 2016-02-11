@@ -10,31 +10,38 @@ namespace ProjectEuler {
             System.Console.WriteLine("What is the 10001st prime number?");
             System.Console.WriteLine();
 
-            LinkedList<int> primes = new LinkedList<int>();
+            SortedSet<int> primes = new SortedSet<int>();
             int firstPrime = 2;
             int number = firstPrime;
-            while(primes.Count < 10001) {
-                bool isPrime = false;
+            while (primes.Count < 10001) {
+                bool isNumberPrime = false;
                 if (primes.Count > 0) {
-                    isPrime = true;
-                    foreach (int i in primes) {
-                        if (number % i == 0) {
-                            isPrime = false;
-                            break;
-                        }
-                    }
+                    isNumberPrime = isPrime(number, primes);
                 }
                 else if (number == firstPrime) {
-                    isPrime = true;
+                    isNumberPrime = true;
                 }
-                if (isPrime) {
-                    primes.AddLast(number);
+                if (isNumberPrime) {
+                    primes.Add(number);
                 }
                 number++;
             }
-            int answer = primes.Last.Value;
+            int answer = primes.Max;
 
             System.Console.WriteLine("Answer is {0}", answer);
+        }
+
+        /**
+         * Returns TRUE if the given number is prime
+         */
+        private static bool isPrime(int n, SortedSet<int> primes) {
+            System.Diagnostics.Debug.Assert(n > primes.Max);
+            foreach (int i in primes) {
+                if (n % i == 0) {
+                    return false;
+                }
+            }
+            return true;
         }
 
     }
