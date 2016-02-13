@@ -24,7 +24,6 @@ namespace ProjectEuler {
             printProblemStatement();
 
             int[] maxPath = new int[TRIANGE.Length];
-            // Perform Algorithm
             for (int i = TRIANGE.Length - 1; i >= 0; i--) {
                 if (getChildLeft(i) >= TRIANGE.Length) {
                     maxPath[i] = TRIANGE[i];
@@ -39,9 +38,13 @@ namespace ProjectEuler {
 
         private static void printProblemStatement() {
             System.Console.WriteLine("Problem 18:");
-            System.Console.WriteLine("If the numbers 1 to 5 are written out in words: one, two, three, four, five, then there are 3 + 3 + 5 + 4 + 4 = 19 letters used in total.");
-            System.Console.WriteLine("If all the numbers from 1 to 1000(one thousand) inclusive were written out in words, how many letters would be used?");
-            System.Console.WriteLine("NOTE: Do not count spaces or hyphens. For example, 342 (three hundred and forty-two) contains 23 letters and 115 (one hundred and fifteen) contains 20 letters. The use of \"and\" when writing out numbers is in compliance with British usage.");
+            System.Console.WriteLine("By starting at the top of the triangle below and moving to adjacent numbers on the row below, the maximum total from top to bottom is 23.");
+            System.Console.WriteLine("   3   ");
+            System.Console.WriteLine("  7 4  ");
+            System.Console.WriteLine(" 2 4 6 ");
+            System.Console.WriteLine("8 5 9 3");
+            System.Console.WriteLine("That is, 3 + 7 + 4 + 9 = 23.");
+            System.Console.WriteLine("Find the maximum total from top to bottom of the triangle below:");
             System.Console.WriteLine();
         }
 
