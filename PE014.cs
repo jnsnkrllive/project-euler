@@ -5,10 +5,30 @@
         public static void execute() {
             printProblemStatement();
 
-            // TODO
-            int answer = -1;
+            int boundUpper = 1000000;
+            int longestChain = 0;
+            int numberWithLongestChain = 0;
+            for (int start = 1; start < boundUpper; start++) {
+                long number = start;
+                int seqLength = 1;
+                while (number > 1) {
+                    number = nextNumber(number);
+                    seqLength++;
+                }
+                if (seqLength > longestChain) {
+                    longestChain = seqLength;
+                    numberWithLongestChain = start;
+                }
+            }
 
-            System.Console.WriteLine("Answer is {0}", answer);
+            System.Console.WriteLine("Answer is {0}", numberWithLongestChain);
+        }
+
+        private static long nextNumber(long n) {
+            if (n % 2 == 0) {
+                return n / 2;
+            }
+            return 3 * n + 1;
         }
 
         private static void printProblemStatement() {
