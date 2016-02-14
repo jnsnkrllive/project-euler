@@ -2,11 +2,18 @@
 
 namespace ProjectEuler {
 
-    class PE007 {
+    class PE007 : PESolution {
 
-        public static void execute() {
-            printProblemStatement();
+        void PESolution.printProblemNumber() {
+            System.Console.WriteLine("Problem 7:");
+        }
 
+        void PESolution.printProblemStatement() {
+            System.Console.WriteLine("By listing the first six prime numbers: 2, 3, 5, 7, 11, and 13, we can see that the 6th prime is 13.");
+            System.Console.WriteLine("What is the 10001st prime number?");
+        }
+
+        void PESolution.solve() {
             SortedSet<int> primes = new SortedSet<int>();
             int firstPrime = 2;
             int number = firstPrime;
@@ -26,13 +33,6 @@ namespace ProjectEuler {
             int answer = primes.Max;
 
             System.Console.WriteLine("Answer is {0}", answer);
-        }
-
-        private static void printProblemStatement() {
-            System.Console.WriteLine("Problem 7:");
-            System.Console.WriteLine("By listing the first six prime numbers: 2, 3, 5, 7, 11, and 13, we can see that the 6th prime is 13.");
-            System.Console.WriteLine("What is the 10001st prime number?");
-            System.Console.WriteLine();
         }
 
         /**

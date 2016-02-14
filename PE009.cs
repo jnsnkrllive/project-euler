@@ -1,10 +1,20 @@
 ﻿namespace ProjectEuler {
 
-    class PE009 {
+    class PE009 : PESolution {
 
-        public static void execute() {
-            printProblemStatement();
+        void PESolution.printProblemNumber() {
+            System.Console.WriteLine("Problem 9:");
+        }
 
+        void PESolution.printProblemStatement() {
+            System.Console.WriteLine("A Pythagorean triplet is a set of three natural numbers, a < b < c, for which,");
+            System.Console.WriteLine("a^2 + b^2 = c^2");
+            System.Console.WriteLine("For example, 3^2 + 4^2 = 9 + 16 = 25 = 5^2.");
+            System.Console.WriteLine("There exists exactly one Pythagorean triplet for which a + b + c = 1000.");
+            System.Console.WriteLine("Find the product abc.");
+        }
+
+        void PESolution.solve() {
             int product = 0;
             for (int i = 1; i < 499; i++) {
                 for (int j = i+1; j < 999; j++) {
@@ -18,17 +28,7 @@
             
             System.Console.WriteLine("Answer is {0}", product);
         }
-
-        private static void printProblemStatement() {
-            System.Console.WriteLine("Problem 9:");
-            System.Console.WriteLine("A Pythagorean triplet is a set of three natural numbers, a < b < c, for which,");
-            System.Console.WriteLine("a^2 + b^2 = c^2");
-            System.Console.WriteLine("For example, 3^2 + 4^2 = 9 + 16 = 25 = 5^2.");
-            System.Console.WriteLine("There exists exactly one Pythagorean triplet for which a + b + c = 1000.");
-            System.Console.WriteLine("Find the product abc.");
-            System.Console.WriteLine();
-        }
-
+        
         /**
          * Returns TRUE if the triplet (a,b,c) is a "Pathagorean Triplet"
          */

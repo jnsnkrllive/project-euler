@@ -1,12 +1,17 @@
 ﻿namespace ProjectEuler {
 
-    class PE010 {
+    class PE010 : PESolution {
 
-        private static int FIRST_PRIME = 2;
+        void PESolution.printProblemNumber() {
+            System.Console.WriteLine("Problem 10:");
+        }
 
-        public static void execute() {
-            printProblemStatement();
+        void PESolution.printProblemStatement() {
+            System.Console.WriteLine("The sum of the primes below 10 is 2 + 3 + 5 + 7 = 17.");
+            System.Console.WriteLine("Find the sum of all the primes below two million.");
+        }
 
+        void PESolution.solve() {
             int boundUpper = 2000000;
             bool[] primes = new bool[boundUpper];
             primes[0] = false;
@@ -36,12 +41,7 @@
             System.Console.WriteLine("Answer is {0}", sum);
         }
 
-        private static void printProblemStatement() {
-            System.Console.WriteLine("Problem 10:");
-            System.Console.WriteLine("The sum of the primes below 10 is 2 + 3 + 5 + 7 = 17.");
-            System.Console.WriteLine("Find the sum of all the primes below two million.");
-            System.Console.WriteLine();
-        }
+        private static int FIRST_PRIME = 2;
 
     }
 

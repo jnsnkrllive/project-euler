@@ -1,10 +1,22 @@
 ﻿namespace ProjectEuler {
 
-    class PE067 {
+    class PE067 : PESolution {
 
-        public static void execute() {
-            printProblemStatement();
+        void PESolution.printProblemNumber() {
+            System.Console.WriteLine("Problem 67:");
+        }
 
+        void PESolution.printProblemStatement() {
+            System.Console.WriteLine("By starting at the top of the triangle below and moving to adjacent numbers on the row below, the maximum total from top to bottom is 23.");
+            System.Console.WriteLine("   3   ");
+            System.Console.WriteLine("  7 4  ");
+            System.Console.WriteLine(" 2 4 6 ");
+            System.Console.WriteLine("8 5 9 3");
+            System.Console.WriteLine("That is, 3 + 7 + 4 + 9 = 23.");
+            System.Console.WriteLine("Find the maximum total from top to bottom in triangle.txt, a 15K text file containing a triangle with one-hundred rows.");
+        }
+
+        void PESolution.solve() {
             int[] maxPath = new int[TRIANGE.Length];
             for (int i = TRIANGE.Length - 1; i >= 0; i--) {
                 if (getChildLeft(i) >= TRIANGE.Length) {
@@ -16,36 +28,6 @@
             }
 
             System.Console.WriteLine("Answer is {0}", maxPath[0]);
-        }
-
-        private static void printProblemStatement() {
-            System.Console.WriteLine("Problem 67:");
-            System.Console.WriteLine("By starting at the top of the triangle below and moving to adjacent numbers on the row below, the maximum total from top to bottom is 23.");
-            System.Console.WriteLine("   3   ");
-            System.Console.WriteLine("  7 4  ");
-            System.Console.WriteLine(" 2 4 6 ");
-            System.Console.WriteLine("8 5 9 3");
-            System.Console.WriteLine("That is, 3 + 7 + 4 + 9 = 23.");
-            System.Console.WriteLine("Find the maximum total from top to bottom in triangle.txt, a 15K text file containing a triangle with one-hundred rows.");
-            System.Console.WriteLine();
-        }
-
-        private static int getChildLeft(int i) {
-            return getRow(i) + i;
-        }
-
-        private static int getChildRight(int i) {
-            return getChildLeft(i) + 1;
-        }
-
-        private static int getRow(int i) {
-            int row = 0;
-            int limit = i;
-            for (int n = 0; n <= limit; n++) {
-                row++;
-                limit -= n;
-            }
-            return row;
         }
 
         private static byte[] TRIANGE = new byte[] {
@@ -150,6 +132,24 @@
             30, 11, 85, 31, 34, 71, 13, 48, 05, 14, 44, 03, 19, 67, 23, 73, 19, 57, 06, 90, 94, 72, 57, 69, 81, 62, 59, 68, 88, 57, 55, 69, 49, 13, 07, 87, 97, 80, 89, 05, 71, 05, 05, 26, 38, 40, 16, 62, 45, 99, 18, 38, 98, 24, 21, 26, 62, 74, 69, 04, 85, 57, 77, 35, 58, 67, 91, 79, 79, 57, 86, 28, 66, 34, 72, 51, 76, 78, 36, 95, 63, 90, 08, 78, 47, 63, 45, 31, 22, 70, 52, 48, 79, 94, 15, 77, 61, 67, 68,
             23, 33, 44, 81, 80, 92, 93, 75, 94, 88, 23, 61, 39, 76, 22, 03, 28, 94, 32, 06, 49, 65, 41, 34, 18, 23, 08, 47, 62, 60, 03, 63, 33, 13, 80, 52, 31, 54, 73, 43, 70, 26, 16, 69, 57, 87, 83, 31, 03, 93, 70, 81, 47, 95, 77, 44, 29, 68, 39, 51, 56, 59, 63, 07, 25, 70, 07, 77, 43, 53, 64, 03, 94, 42, 95, 39, 18, 01, 66, 21, 16, 97, 20, 50, 90, 16, 70, 10, 95, 69, 29, 06, 25, 61, 41, 26, 15, 59, 63, 35
         };
+
+        private static int getChildLeft(int i) {
+            return getRow(i) + i;
+        }
+
+        private static int getChildRight(int i) {
+            return getChildLeft(i) + 1;
+        }
+
+        private static int getRow(int i) {
+            int row = 0;
+            int limit = i;
+            for (int n = 0; n <= limit; n++) {
+                row++;
+                limit -= n;
+            }
+            return row;
+        }
 
     }
 

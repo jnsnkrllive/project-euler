@@ -1,10 +1,17 @@
 ﻿namespace ProjectEuler {
 
-    class PE016 {
+    class PE016 : PESolution {
 
-        public static void execute() {
-            printProblemStatement();
-            
+        void PESolution.printProblemNumber() {
+            System.Console.WriteLine("Problem 16:");
+        }
+
+        void PESolution.printProblemStatement() {
+            System.Console.WriteLine("2^15 = 32768 and the sum of its digits is 3 + 2 + 7 + 6 + 8 = 26.");
+            System.Console.WriteLine("What is the sum of the digits of the number 2^1000?");
+        }
+
+        void PESolution.solve() {
             int[] digits = new int[2 * System.Byte.MaxValue];
             digits[0] = 2;
             int targetExp = 1000;
@@ -30,13 +37,6 @@
             }
 
             System.Console.WriteLine("Answer is {0}", sum);
-        }
-
-        private static void printProblemStatement() {
-            System.Console.WriteLine("Problem 16:");
-            System.Console.WriteLine("2^15 = 32768 and the sum of its digits is 3 + 2 + 7 + 6 + 8 = 26.");
-            System.Console.WriteLine("What is the sum of the digits of the number 2^1000?");
-            System.Console.WriteLine();
         }
 
     }

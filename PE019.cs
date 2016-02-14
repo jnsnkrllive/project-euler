@@ -2,11 +2,26 @@
 
 namespace ProjectEuler {
 
-    class PE019 {
+    class PE019 : PESolution {
 
-        public static void execute() {
-            printProblemStatement();
+        void PESolution.printProblemNumber() {
+            System.Console.WriteLine("Problem 19:");
+        }
 
+        void PESolution.printProblemStatement() {
+            System.Console.WriteLine("You are given the following information, but you may prefer to do some research for yourself.");
+            System.Console.WriteLine(">> 1 Jan 1900 was a Monday.");
+            System.Console.WriteLine(">> Thirty days has September,");
+            System.Console.WriteLine("   April, June and November.");
+            System.Console.WriteLine("   All the rest have thirty - one,");
+            System.Console.WriteLine("   Saving February alone,");
+            System.Console.WriteLine("   Which has twenty - eight, rain or shine.");
+            System.Console.WriteLine("   And on leap years, twenty - nine.");
+            System.Console.WriteLine(">> A leap year occurs on any year evenly divisible by 4, but not on a century unless it is divisible by 400.");
+            System.Console.WriteLine("How many Sundays fell on the first of the month during the twentieth century(1 Jan 1901 to 31 Dec 2000)?");
+        }
+
+        void PESolution.solve() {
             Dictionary<int, int> daysInMonth = new Dictionary<int, int>();
             daysInMonth.Add( 1, 31);
             daysInMonth.Add( 2, 28);
@@ -20,7 +35,6 @@ namespace ProjectEuler {
             daysInMonth.Add(10, 31);
             daysInMonth.Add(11, 30);
             daysInMonth.Add(12, 31);
-
             int firstSundays = 0;
             int firstDayOfWeek = 1;
             for (int y = 1900; y <= 2000; y++) {
@@ -41,6 +55,9 @@ namespace ProjectEuler {
             System.Console.WriteLine("Answer is {0}", firstSundays);
         }
 
+        /**
+         * Returns TRUE if the given year is a leap year
+         */
         private static bool isLeapYear(int year) {
             if (year % 4 == 0) {
                 if (year % 100 == 0) {
@@ -49,21 +66,6 @@ namespace ProjectEuler {
                 return true;
             }
             return false;
-        }
-
-        private static void printProblemStatement() {
-            System.Console.WriteLine("Problem 19:");
-            System.Console.WriteLine("You are given the following information, but you may prefer to do some research for yourself.");
-            System.Console.WriteLine(">> 1 Jan 1900 was a Monday.");
-            System.Console.WriteLine(">> Thirty days has September,");
-            System.Console.WriteLine("   April, June and November.");
-            System.Console.WriteLine("   All the rest have thirty - one,");
-            System.Console.WriteLine("   Saving February alone,");
-            System.Console.WriteLine("   Which has twenty - eight, rain or shine.");
-            System.Console.WriteLine("   And on leap years, twenty - nine.");
-            System.Console.WriteLine(">> A leap year occurs on any year evenly divisible by 4, but not on a century unless it is divisible by 400.");
-            System.Console.WriteLine("How many Sundays fell on the first of the month during the twentieth century(1 Jan 1901 to 31 Dec 2000)?");
-            System.Console.WriteLine();
         }
 
     }

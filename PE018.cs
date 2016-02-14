@@ -1,10 +1,22 @@
 ﻿namespace ProjectEuler {
 
-    class PE018 {
+    class PE018 : PESolution {
 
-        public static void execute() {
-            printProblemStatement();
+        void PESolution.printProblemNumber() {
+            System.Console.WriteLine("Problem 18:");
+        }
 
+        void PESolution.printProblemStatement() {
+            System.Console.WriteLine("By starting at the top of the triangle below and moving to adjacent numbers on the row below, the maximum total from top to bottom is 23.");
+            System.Console.WriteLine("   3   ");
+            System.Console.WriteLine("  7 4  ");
+            System.Console.WriteLine(" 2 4 6 ");
+            System.Console.WriteLine("8 5 9 3");
+            System.Console.WriteLine("That is, 3 + 7 + 4 + 9 = 23.");
+            System.Console.WriteLine("Find the maximum total from top to bottom of the triangle below:");
+        }
+
+        void PESolution.solve() {
             int[] maxPath = new int[TRIANGE.Length];
             for (int i = TRIANGE.Length - 1; i >= 0; i--) {
                 if (getChildLeft(i) >= TRIANGE.Length) {
@@ -17,19 +29,7 @@
 
             System.Console.WriteLine("Answer is {0}", maxPath[0]);
         }
-
-        private static void printProblemStatement() {
-            System.Console.WriteLine("Problem 18:");
-            System.Console.WriteLine("By starting at the top of the triangle below and moving to adjacent numbers on the row below, the maximum total from top to bottom is 23.");
-            System.Console.WriteLine("   3   ");
-            System.Console.WriteLine("  7 4  ");
-            System.Console.WriteLine(" 2 4 6 ");
-            System.Console.WriteLine("8 5 9 3");
-            System.Console.WriteLine("That is, 3 + 7 + 4 + 9 = 23.");
-            System.Console.WriteLine("Find the maximum total from top to bottom of the triangle below:");
-            System.Console.WriteLine();
-        }
-
+        
         private static int getChildLeft(int i) {
             return getRow(i) + i;
         }
