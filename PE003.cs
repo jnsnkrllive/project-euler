@@ -3,10 +3,7 @@
     class PE003 {
 
         public static void execute() {
-            System.Console.WriteLine("Problem 3:");
-            System.Console.WriteLine("The prime factors of 13195 are 5, 7, 13 and 29.");
-            System.Console.WriteLine("What is the largest prime factor of the number 600851475143?");
-            System.Console.WriteLine();
+            printProblemStatement();
 
             long targetNumber = 600851475143;
             long largestPrimeFactor = -1;
@@ -21,7 +18,14 @@
                 }
             }
 
-            System.Console.WriteLine("The largest prime factor of {0} is {1}", targetNumber, largestPrimeFactor);
+            System.Console.WriteLine("Answer is {0}", largestPrimeFactor);
+        }
+
+        private static void printProblemStatement() {
+            System.Console.WriteLine("Problem 3:");
+            System.Console.WriteLine("The prime factors of 13195 are 5, 7, 13 and 29.");
+            System.Console.WriteLine("What is the largest prime factor of the number 600851475143?");
+            System.Console.WriteLine();
         }
 
         /**

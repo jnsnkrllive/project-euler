@@ -3,10 +3,7 @@
     class PE005 {
 
         public static void execute() {
-            System.Console.WriteLine("Problem 5:");
-            System.Console.WriteLine("2520 is the smallest number that can be divided by each of the numbers from 1 to 10 without any remainder.");
-            System.Console.WriteLine("What is the smallest positive number that is evenly divisible by all of the numbers from 1 to 20?");
-            System.Console.WriteLine();
+            printProblemStatement();
 
             int smallestMultiple = -1;
             int rangeMin = 1;
@@ -19,7 +16,14 @@
                 testNumber++;
             }
 
-            System.Console.WriteLine("The smallest positive number evenly divisible by all numbers from {0} to {1} is {2}", rangeMin, rangeMax, smallestMultiple);
+            System.Console.WriteLine("Answer is {0}", smallestMultiple);
+        }
+
+        private static void printProblemStatement() {
+            System.Console.WriteLine("Problem 5:");
+            System.Console.WriteLine("2520 is the smallest number that can be divided by each of the numbers from 1 to 10 without any remainder.");
+            System.Console.WriteLine("What is the smallest positive number that is evenly divisible by all of the numbers from 1 to 20?");
+            System.Console.WriteLine();
         }
 
         /**

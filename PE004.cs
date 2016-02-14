@@ -3,10 +3,7 @@
     class PE004 {
 
         public static void execute() {
-            System.Console.WriteLine("Problem 4:");
-            System.Console.WriteLine("A palindromic number reads the same both ways. The largest palindrome made from the product of two 2 - digit numbers is 9009 = 91 × 99.");
-            System.Console.WriteLine("Find the largest palindrome made from the product of two 3 - digit numbers.");
-            System.Console.WriteLine();
+            printProblemStatement();
 
             int largestPalindrome = -1;
             for (int i = 999; i > 99; i--) {
@@ -18,7 +15,14 @@
                 }
             }
 
-            System.Console.WriteLine("The largest palindrome made from the product of two 3-digit numbers is {0}", largestPalindrome);
+            System.Console.WriteLine("Answer is {0}", largestPalindrome);
+        }
+
+        private static void printProblemStatement() {
+            System.Console.WriteLine("Problem 4:");
+            System.Console.WriteLine("A palindromic number reads the same both ways. The largest palindrome made from the product of two 2 - digit numbers is 9009 = 91 × 99.");
+            System.Console.WriteLine("Find the largest palindrome made from the product of two 3 - digit numbers.");
+            System.Console.WriteLine();
         }
 
         /**

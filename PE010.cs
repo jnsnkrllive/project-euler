@@ -5,10 +5,7 @@
         private static int FIRST_PRIME = 2;
 
         public static void execute() {
-            System.Console.WriteLine("Problem 10:");
-            System.Console.WriteLine("The sum of the primes below 10 is 2 + 3 + 5 + 7 = 17.");
-            System.Console.WriteLine("Find the sum of all the primes below two million.");
-            System.Console.WriteLine();
+            printProblemStatement();
 
             int boundUpper = 2000000;
             bool[] primes = new bool[boundUpper];
@@ -37,6 +34,13 @@
             }
 
             System.Console.WriteLine("Answer is {0}", sum);
+        }
+
+        private static void printProblemStatement() {
+            System.Console.WriteLine("Problem 10:");
+            System.Console.WriteLine("The sum of the primes below 10 is 2 + 3 + 5 + 7 = 17.");
+            System.Console.WriteLine("Find the sum of all the primes below two million.");
+            System.Console.WriteLine();
         }
 
     }
