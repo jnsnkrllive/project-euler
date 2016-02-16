@@ -20,9 +20,9 @@
                 int[] carryover = new int[digits.Length + 2];
                 for (int j = 0; j < digits.Length; j++) {
                     int newNumber = i * digits[j];
-                    carryover[j + 1] += getTens(newNumber) + getTens(getOnes(newNumber) + carryover[j]);
-                    carryover[j + 2] += getHundreds(newNumber);
-                      digits[j] = getOnes(getOnes(newNumber) + carryover[j]);
+                    carryover[j + 1] += PELibrary.getTens(newNumber) + PELibrary.getTens(PELibrary.getOnes(newNumber) + carryover[j]);
+                    carryover[j + 2] += PELibrary.getHundreds(newNumber);
+                      digits[j] = PELibrary.getOnes(PELibrary.getOnes(newNumber) + carryover[j]);
                 }
             }
             int sum = 0;
@@ -31,27 +31,6 @@
             }
 
             System.Console.WriteLine("Answer is {0}", sum);
-        }
-
-        private static int getOnes(int n) {
-            if (n < 1) {
-                return 0;
-            }
-            return (n / 1) % 10;
-        }
-
-        private static int getTens(int n) {
-            if (n < 10) {
-                return 0;
-            }
-            return (n / 10) % 10;
-        }
-
-        private static int getHundreds(int n) {
-            if (n < 100) {
-                return 0;
-            }
-            return (n / 100) % 10;
         }
 
     }

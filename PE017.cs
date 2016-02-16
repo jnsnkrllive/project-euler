@@ -58,10 +58,10 @@ namespace ProjectEuler {
         private static Dictionary<int, int> cardinalLength = new Dictionary<int, int>();
 
         private static int numberOfLetters(int n) {
-            int ones = getOnes(n);
-            int tens = getTens(n);
-            int hundreds = getHundreds(n);
-            int thousands = getThousands(n);
+            int ones = PELibrary.getOnes(n);
+            int tens = PELibrary.getTens(n);
+            int hundreds = PELibrary.getHundreds(n);
+            int thousands = PELibrary.getThousands(n);
             int count = 0;
             // Add for x1-99
             if (tens == 0) {
@@ -90,34 +90,6 @@ namespace ProjectEuler {
                 count += cardinalLength[thousands] + cardinalLength[1000];
             }
             return count;
-        }
-
-        private static int getOnes(int n) {
-            if (n < 1) {
-                return 0;
-            }
-            return (n / 1) % 10;
-        }
-
-        private static int getTens(int n) {
-            if (n < 10) {
-                return 0;
-            }
-            return (n / 10) % 10;
-        }
-
-        private static int getHundreds(int n) {
-            if (n < 100) {
-                return 0;
-            }
-            return (n / 100) % 10;
-        }
-
-        private static int getThousands(int n) {
-            if (n < 1000) {
-                return 0;
-            }
-            return (n / 1000) % 10;
         }
 
     }
