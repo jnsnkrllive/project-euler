@@ -10,8 +10,8 @@ namespace ProjectEuler {
     class SolutionRunner {
 
         static void Main(string[] args) {
-            //executeSingle("020");
-            executeAll();
+            executeSingle("020");
+            //executeAll();
         }
 
         static void executeAll() {
