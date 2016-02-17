@@ -1,24 +1,25 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 
 namespace ProjectEuler {
 
     class PE019 : PESolution {
 
         void PESolution.printProblemNumber() {
-            System.Console.WriteLine("Problem 19:");
+            Console.WriteLine("Problem 19:");
         }
 
         void PESolution.printProblemStatement() {
-            System.Console.WriteLine("You are given the following information, but you may prefer to do some research for yourself.");
-            System.Console.WriteLine(">> 1 Jan 1900 was a Monday.");
-            System.Console.WriteLine(">> Thirty days has September,");
-            System.Console.WriteLine("   April, June and November.");
-            System.Console.WriteLine("   All the rest have thirty - one,");
-            System.Console.WriteLine("   Saving February alone,");
-            System.Console.WriteLine("   Which has twenty - eight, rain or shine.");
-            System.Console.WriteLine("   And on leap years, twenty - nine.");
-            System.Console.WriteLine(">> A leap year occurs on any year evenly divisible by 4, but not on a century unless it is divisible by 400.");
-            System.Console.WriteLine("How many Sundays fell on the first of the month during the twentieth century(1 Jan 1901 to 31 Dec 2000)?");
+            Console.WriteLine("You are given the following information, but you may prefer to do some research for yourself.");
+            Console.WriteLine(">> 1 Jan 1900 was a Monday.");
+            Console.WriteLine(">> Thirty days has September,");
+            Console.WriteLine("   April, June and November.");
+            Console.WriteLine("   All the rest have thirty - one,");
+            Console.WriteLine("   Saving February alone,");
+            Console.WriteLine("   Which has twenty - eight, rain or shine.");
+            Console.WriteLine("   And on leap years, twenty - nine.");
+            Console.WriteLine(">> A leap year occurs on any year evenly divisible by 4, but not on a century unless it is divisible by 400.");
+            Console.WriteLine("How many Sundays fell on the first of the month during the twentieth century(1 Jan 1901 to 31 Dec 2000)?");
         }
 
         void PESolution.solve() {
@@ -52,7 +53,7 @@ namespace ProjectEuler {
                 }
             }
 
-            System.Console.WriteLine("Answer is {0}", firstSundays);
+            Console.WriteLine("Answer is {0}", firstSundays);
         }
 
         /**

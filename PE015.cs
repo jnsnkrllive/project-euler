@@ -1,14 +1,16 @@
-﻿namespace ProjectEuler {
+﻿using System;
+
+namespace ProjectEuler {
 
     class PE015 : PESolution {
 
         void PESolution.printProblemNumber() {
-            System.Console.WriteLine("Problem 15:");
+            Console.WriteLine("Problem 15:");
         }
 
         void PESolution.printProblemStatement() {
-            System.Console.WriteLine("Starting in the top left corner of a 2×2 grid, and only being able to move to the right and down, there are exactly 6 routes to the bottom right corner.");
-            System.Console.WriteLine("How many such routes are there through a 20×20 grid?");
+            Console.WriteLine("Starting in the top left corner of a 2×2 grid, and only being able to move to the right and down, there are exactly 6 routes to the bottom right corner.");
+            Console.WriteLine("How many such routes are there through a 20×20 grid?");
         }
 
         void PESolution.solve() {
@@ -17,7 +19,7 @@
             }
             long answer = pathsToEndFromPoint(0, 0);
 
-            System.Console.WriteLine("Answer is {0}", answer);
+            Console.WriteLine("Answer is {0}", answer);
         }
 
         private static byte GRID_SIZE = 20;

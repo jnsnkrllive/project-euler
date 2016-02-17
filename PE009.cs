@@ -1,17 +1,19 @@
-﻿namespace ProjectEuler {
+﻿using System;
+
+namespace ProjectEuler {
 
     class PE009 : PESolution {
 
         void PESolution.printProblemNumber() {
-            System.Console.WriteLine("Problem 9:");
+            Console.WriteLine("Problem 9:");
         }
 
         void PESolution.printProblemStatement() {
-            System.Console.WriteLine("A Pythagorean triplet is a set of three natural numbers, a < b < c, for which,");
-            System.Console.WriteLine("a^2 + b^2 = c^2");
-            System.Console.WriteLine("For example, 3^2 + 4^2 = 9 + 16 = 25 = 5^2.");
-            System.Console.WriteLine("There exists exactly one Pythagorean triplet for which a + b + c = 1000.");
-            System.Console.WriteLine("Find the product abc.");
+            Console.WriteLine("A Pythagorean triplet is a set of three natural numbers, a < b < c, for which,");
+            Console.WriteLine("a^2 + b^2 = c^2");
+            Console.WriteLine("For example, 3^2 + 4^2 = 9 + 16 = 25 = 5^2.");
+            Console.WriteLine("There exists exactly one Pythagorean triplet for which a + b + c = 1000.");
+            Console.WriteLine("Find the product abc.");
         }
 
         void PESolution.solve() {
@@ -26,7 +28,7 @@
                 }
             }
             
-            System.Console.WriteLine("Answer is {0}", product);
+            Console.WriteLine("Answer is {0}", product);
         }
         
         /**

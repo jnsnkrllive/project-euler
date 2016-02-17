@@ -1,15 +1,17 @@
-﻿namespace ProjectEuler {
+﻿using System;
+
+namespace ProjectEuler {
 
     class PE020 : PESolution {
 
         void PESolution.printProblemNumber() {
-            System.Console.WriteLine("Problem 20:");
+            Console.WriteLine("Problem 20:");
         }
 
         void PESolution.printProblemStatement() {
-            System.Console.WriteLine("n! means n × (n − 1) × ... × 3 × 2 × 1");
-            System.Console.WriteLine("For example, 10! = 10 × 9 × ... × 3 × 2 × 1 = 3628800, and the sum of the digits in the number 10! is 3 + 6 + 2 + 8 + 8 + 0 + 0 = 27.");
-            System.Console.WriteLine("Find the sum of the digits in the number 100!");
+            Console.WriteLine("n! means n × (n − 1) × ... × 3 × 2 × 1");
+            Console.WriteLine("For example, 10! = 10 × 9 × ... × 3 × 2 × 1 = 3628800, and the sum of the digits in the number 10! is 3 + 6 + 2 + 8 + 8 + 0 + 0 = 27.");
+            Console.WriteLine("Find the sum of the digits in the number 100!");
         }
 
         void PESolution.solve() {
@@ -30,7 +32,7 @@
                 sum += digits[i];
             }
 
-            System.Console.WriteLine("Answer is {0}", sum);
+            Console.WriteLine("Answer is {0}", sum);
         }
 
     }

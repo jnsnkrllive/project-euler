@@ -1,18 +1,20 @@
-﻿namespace ProjectEuler {
+﻿using System;
+
+namespace ProjectEuler {
 
     class PE013 : PESolution {
 
         void PESolution.printProblemNumber() {
-            System.Console.WriteLine("Problem 13:");
+            Console.WriteLine("Problem 13:");
         }
 
         void PESolution.printProblemStatement() {
-            System.Console.WriteLine("Work out the first ten digits of the sum of the following one-hundred 50-digit numbers.");
+            Console.WriteLine("Work out the first ten digits of the sum of the following one-hundred 50-digit numbers.");
             for (int i = 0; i < NUMBERS.Length; i++) {
                 for (int j = 0; j < NUMBERS[i].Length; j++) {
-                    System.Console.Write(NUMBERS[i][j]);
+                    Console.Write(NUMBERS[i][j]);
                 }
-                System.Console.Write("\n");
+                Console.Write("\n");
             }
         }
 
@@ -23,12 +25,12 @@
                 for (int i = 0; i < NUMBERS.Length; i++) {
                     sumColumn += NUMBERS[i][j];
                 }
-                sumTotal += sumColumn * System.Math.Pow(10, NUMBERS[0].Length - j);
+                sumTotal += sumColumn * Math.Pow(10, NUMBERS[0].Length - j);
             }
-            string answer = System.Convert.ToString(sumTotal).Substring(0, 11);
+            string answer = Convert.ToString(sumTotal).Substring(0, 11);
             answer = answer.Remove(1,1);
 
-            System.Console.WriteLine("Answer is {0}", answer);
+            Console.WriteLine("Answer is {0}", answer);
         }
 
         private static byte[][] NUMBERS = {

@@ -1,19 +1,21 @@
-﻿namespace ProjectEuler {
+﻿using System;
+
+namespace ProjectEuler {
 
     class PE067 : PESolution {
 
         void PESolution.printProblemNumber() {
-            System.Console.WriteLine("Problem 67:");
+            Console.WriteLine("Problem 67:");
         }
 
         void PESolution.printProblemStatement() {
-            System.Console.WriteLine("By starting at the top of the triangle below and moving to adjacent numbers on the row below, the maximum total from top to bottom is 23.");
-            System.Console.WriteLine("   3   ");
-            System.Console.WriteLine("  7 4  ");
-            System.Console.WriteLine(" 2 4 6 ");
-            System.Console.WriteLine("8 5 9 3");
-            System.Console.WriteLine("That is, 3 + 7 + 4 + 9 = 23.");
-            System.Console.WriteLine("Find the maximum total from top to bottom in triangle.txt, a 15K text file containing a triangle with one-hundred rows.");
+            Console.WriteLine("By starting at the top of the triangle below and moving to adjacent numbers on the row below, the maximum total from top to bottom is 23.");
+            Console.WriteLine("   3   ");
+            Console.WriteLine("  7 4  ");
+            Console.WriteLine(" 2 4 6 ");
+            Console.WriteLine("8 5 9 3");
+            Console.WriteLine("That is, 3 + 7 + 4 + 9 = 23.");
+            Console.WriteLine("Find the maximum total from top to bottom in triangle.txt, a 15K text file containing a triangle with one-hundred rows.");
         }
 
         void PESolution.solve() {
@@ -23,11 +25,11 @@
                     maxPath[i] = TRIANGE[i];
                 }
                 else {
-                    maxPath[i] = System.Math.Max(maxPath[getChildLeft(i)], maxPath[getChildRight(i)]) + TRIANGE[i];
+                    maxPath[i] = Math.Max(maxPath[getChildLeft(i)], maxPath[getChildRight(i)]) + TRIANGE[i];
                 }
             }
 
-            System.Console.WriteLine("Answer is {0}", maxPath[0]);
+            Console.WriteLine("Answer is {0}", maxPath[0]);
         }
 
         private static byte[] TRIANGE = new byte[] {

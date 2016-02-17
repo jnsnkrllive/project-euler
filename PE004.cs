@@ -1,14 +1,16 @@
-﻿namespace ProjectEuler {
+﻿using System;
+
+namespace ProjectEuler {
 
     class PE004 : PESolution {
 
         void PESolution.printProblemNumber() {
-            System.Console.WriteLine("Problem 4:");
+            Console.WriteLine("Problem 4:");
         }
 
         void PESolution.printProblemStatement() {
-            System.Console.WriteLine("A palindromic number reads the same both ways. The largest palindrome made from the product of two 2 - digit numbers is 9009 = 91 × 99.");
-            System.Console.WriteLine("Find the largest palindrome made from the product of two 3 - digit numbers.");
+            Console.WriteLine("A palindromic number reads the same both ways. The largest palindrome made from the product of two 2 - digit numbers is 9009 = 91 × 99.");
+            Console.WriteLine("Find the largest palindrome made from the product of two 3 - digit numbers.");
         }
 
         void PESolution.solve() {
@@ -22,7 +24,7 @@
                 }
             }
 
-            System.Console.WriteLine("Answer is {0}", largestPalindrome);
+            Console.WriteLine("Answer is {0}", largestPalindrome);
         }
 
         /**

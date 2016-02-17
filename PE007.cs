@@ -1,16 +1,17 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 
 namespace ProjectEuler {
 
     class PE007 : PESolution {
 
         void PESolution.printProblemNumber() {
-            System.Console.WriteLine("Problem 7:");
+            Console.WriteLine("Problem 7:");
         }
 
         void PESolution.printProblemStatement() {
-            System.Console.WriteLine("By listing the first six prime numbers: 2, 3, 5, 7, 11, and 13, we can see that the 6th prime is 13.");
-            System.Console.WriteLine("What is the 10001st prime number?");
+            Console.WriteLine("By listing the first six prime numbers: 2, 3, 5, 7, 11, and 13, we can see that the 6th prime is 13.");
+            Console.WriteLine("What is the 10001st prime number?");
         }
 
         void PESolution.solve() {
@@ -32,7 +33,7 @@ namespace ProjectEuler {
             }
             int answer = primes.Max;
 
-            System.Console.WriteLine("Answer is {0}", answer);
+            Console.WriteLine("Answer is {0}", answer);
         }
 
         /**

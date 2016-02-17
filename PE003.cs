@@ -1,14 +1,16 @@
-﻿namespace ProjectEuler {
+﻿using System;
+
+namespace ProjectEuler {
 
     class PE003 : PESolution {
 
         void PESolution.printProblemNumber() {
-            System.Console.WriteLine("Problem 3:");
+            Console.WriteLine("Problem 3:");
         }
 
         void PESolution.printProblemStatement() {
-            System.Console.WriteLine("The prime factors of 13195 are 5, 7, 13 and 29.");
-            System.Console.WriteLine("What is the largest prime factor of the number 600851475143?");
+            Console.WriteLine("The prime factors of 13195 are 5, 7, 13 and 29.");
+            Console.WriteLine("What is the largest prime factor of the number 600851475143?");
         }
 
         void PESolution.solve() {
@@ -24,7 +26,7 @@
                 }
             }
 
-            System.Console.WriteLine("Answer is {0}", largestPrimeFactor);
+            Console.WriteLine("Answer is {0}", largestPrimeFactor);
         }
 
         /**

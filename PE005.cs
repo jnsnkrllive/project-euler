@@ -1,14 +1,16 @@
-﻿namespace ProjectEuler {
+﻿using System;
+
+namespace ProjectEuler {
 
     class PE005 : PESolution {
 
         void PESolution.printProblemNumber() {
-            System.Console.WriteLine("Problem 5:");
+            Console.WriteLine("Problem 5:");
         }
 
         void PESolution.printProblemStatement() {
-            System.Console.WriteLine("2520 is the smallest number that can be divided by each of the numbers from 1 to 10 without any remainder.");
-            System.Console.WriteLine("What is the smallest positive number that is evenly divisible by all of the numbers from 1 to 20?");
+            Console.WriteLine("2520 is the smallest number that can be divided by each of the numbers from 1 to 10 without any remainder.");
+            Console.WriteLine("What is the smallest positive number that is evenly divisible by all of the numbers from 1 to 20?");
         }
 
         void PESolution.solve() {
@@ -23,7 +25,7 @@
                 testNumber++;
             }
 
-            System.Console.WriteLine("Answer is {0}", smallestMultiple);
+            Console.WriteLine("Answer is {0}", smallestMultiple);
         }
 
         /**

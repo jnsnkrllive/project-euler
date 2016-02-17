@@ -1,20 +1,35 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
     
 namespace ProjectEuler {
 
     class PE017 : PESolution {
 
         void PESolution.printProblemNumber() {
-            System.Console.WriteLine("Problem 17:");
+            Console.WriteLine("Problem 17:");
         }
 
         void PESolution.printProblemStatement() {
-            System.Console.WriteLine("If the numbers 1 to 5 are written out in words: one, two, three, four, five, then there are 3 + 3 + 5 + 4 + 4 = 19 letters used in total.");
-            System.Console.WriteLine("If all the numbers from 1 to 1000(one thousand) inclusive were written out in words, how many letters would be used?");
-            System.Console.WriteLine("NOTE: Do not count spaces or hyphens. For example, 342 (three hundred and forty-two) contains 23 letters and 115 (one hundred and fifteen) contains 20 letters. The use of \"and\" when writing out numbers is in compliance with British usage.");
+            Console.WriteLine("If the numbers 1 to 5 are written out in words: one, two, three, four, five, then there are 3 + 3 + 5 + 4 + 4 = 19 letters used in total.");
+            Console.WriteLine("If all the numbers from 1 to 1000(one thousand) inclusive were written out in words, how many letters would be used?");
+            Console.WriteLine("NOTE: Do not count spaces or hyphens. For example, 342 (three hundred and forty-two) contains 23 letters and 115 (one hundred and fifteen) contains 20 letters. The use of \"and\" when writing out numbers is in compliance with British usage.");
         }
 
         void PESolution.solve() {
+            initCardinalLength();
+            // Perform Calculation
+            int answer = 0;
+            int boundUpper = 1000;
+            for (int i = 1; i <= boundUpper; i++) {
+                answer += numberOfLetters(i);
+            }
+
+            Console.WriteLine("Answer is {0}", answer);
+        }
+
+        private static Dictionary<int, int> cardinalLength = new Dictionary<int, int>();
+
+        private static void initCardinalLength() {
             // Initialize map that defines the length of the cardinal numbers used in this calculation
             cardinalLength.Add(1, "one".Length);
             cardinalLength.Add(2, "two".Length);
@@ -45,17 +60,7 @@ namespace ProjectEuler {
             cardinalLength.Add(90, "ninety".Length);
             cardinalLength.Add(100, "hundredand".Length);
             cardinalLength.Add(1000, "thousand".Length);
-            // Perform Calculation
-            int answer = 0;
-            int boundUpper = 1000;
-            for (int i = 1; i <= boundUpper; i++) {
-                answer += numberOfLetters(i);
-            }
-
-            System.Console.WriteLine("Answer is {0}", answer);
         }
-
-        private static Dictionary<int, int> cardinalLength = new Dictionary<int, int>();
 
         private static int numberOfLetters(int n) {
             int ones = PELibrary.getOnes(n);

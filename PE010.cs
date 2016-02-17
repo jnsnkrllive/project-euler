@@ -1,14 +1,17 @@
-﻿namespace ProjectEuler {
+﻿using System;
+
+
+namespace ProjectEuler {
 
     class PE010 : PESolution {
 
         void PESolution.printProblemNumber() {
-            System.Console.WriteLine("Problem 10:");
+            Console.WriteLine("Problem 10:");
         }
 
         void PESolution.printProblemStatement() {
-            System.Console.WriteLine("The sum of the primes below 10 is 2 + 3 + 5 + 7 = 17.");
-            System.Console.WriteLine("Find the sum of all the primes below two million.");
+            Console.WriteLine("The sum of the primes below 10 is 2 + 3 + 5 + 7 = 17.");
+            Console.WriteLine("Find the sum of all the primes below two million.");
         }
 
         void PESolution.solve() {
@@ -38,7 +41,7 @@
                 }
             }
 
-            System.Console.WriteLine("Answer is {0}", sum);
+            Console.WriteLine("Answer is {0}", sum);
         }
 
         private static int FIRST_PRIME = 2;
