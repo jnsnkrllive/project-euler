@@ -1,4 +1,7 @@
-﻿namespace ProjectEuler {
+﻿using System;
+using System.Collections;
+
+namespace ProjectEuler {
 
     class PELibrary {
 
@@ -24,6 +27,33 @@
 
         public static int getThousands(int n) {
             return getPlaceValue(n, 4);
+        }
+
+        /**
+         * Sieve of Eratosthenes
+         * Returns an array of primes up to a given limit
+         */
+        public static int[] getPrimesUpToLimit(int boundUpper) {
+            // Initialze numbers array
+            bool[] numbers = new bool[boundUpper];
+            for (int i = 2; i < numbers.Length; i++) {
+                numbers[i] = true;
+            }
+            // Perform Algorithm
+            ArrayList primes = new ArrayList();
+            for (int i = 0; i < numbers.Length; i++) {
+                if (!numbers[i]) {
+                    continue;
+                }
+                primes.Add(i);
+                if (i < Math.Sqrt(numbers.Length)) {
+                    for (int j = i; j < numbers.Length; j = j + i) {
+                        numbers[j] = false;
+                    }
+                }
+            }
+            // Return Primes as Array
+            return (int[])primes.ToArray(typeof(int));
         }
 
     }
